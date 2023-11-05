@@ -2,6 +2,7 @@ package com.example.myclass
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.example.myclass.databinding.ActivityProfileDetailBinding
 
@@ -49,15 +50,18 @@ class ProfileDetailActivity : AppCompatActivity() {
                 onBackPressed()
             }
 
-            llGpa.setOnClickListener {
-                Toast.makeText(this@ProfileDetailActivity, "Indeks Prestasi Kumulatif: $studentGpa", Toast.LENGTH_SHORT).show()
-            }
-            llCredits.setOnClickListener {
-                Toast.makeText(this@ProfileDetailActivity, "Satuan Kredit Semester Kumulatif: $studentSKSK", Toast.LENGTH_SHORT).show()
-            }
-            llSemester.setOnClickListener {
-                Toast.makeText(this@ProfileDetailActivity, "Semester: $studentSemester", Toast.LENGTH_SHORT).show()
-            }
+            llGpa.setOnLongClickListener(View.OnLongClickListener {
+                Toast.makeText(this@ProfileDetailActivity, "Indeks Prestasi Kumulatif", Toast.LENGTH_SHORT).show()
+                true
+            })
+            llCredits.setOnLongClickListener(View.OnLongClickListener {
+                Toast.makeText(this@ProfileDetailActivity, "Satuan Kredit Semester Kumulatif", Toast.LENGTH_SHORT).show()
+                true
+            })
+            llSemester.setOnLongClickListener(View.OnLongClickListener {
+                Toast.makeText(this@ProfileDetailActivity, "Semester", Toast.LENGTH_SHORT).show()
+                true
+            })
         }
     }
 }
